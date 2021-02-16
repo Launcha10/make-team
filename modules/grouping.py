@@ -71,7 +71,8 @@ class MakeTeam:
         random.shuffle(self.channel_mem)
 
         # チーム分けで余るメンバーを取得
-        remainder_num = self.mem_len % party_num
+        #remainder_num = self.mem_len % party_num
+        remainder_num = party_num
         if remainder_num != 0: 
             for r in range(remainder_num):
                 remainder.append(self.channel_mem.pop())
