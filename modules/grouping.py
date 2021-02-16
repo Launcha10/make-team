@@ -65,7 +65,7 @@ class MakeTeam:
 
         # チーム数を取得
         #party_num = self.mem_len // specified_len
-        party_num = 2
+        party_num = int(self.mem_len / specified_len)
 
         # メンバーリストをシャッフル
         random.shuffle(self.channel_mem)
