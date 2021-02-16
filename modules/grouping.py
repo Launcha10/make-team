@@ -64,7 +64,8 @@ class MakeTeam:
             return '実行できません。チーム分けできる数を指定してください。'
 
         # チーム数を取得
-        party_num = self.mem_len / specified_len
+        #party_num = self.mem_len // specified_len
+        party_num = 2
 
         # メンバーリストをシャッフル
         random.shuffle(self.channel_mem)
