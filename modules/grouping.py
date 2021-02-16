@@ -71,8 +71,9 @@ class MakeTeam:
         random.shuffle(self.channel_mem)
 
         # チーム分けで余るメンバーを取得
-        #remainder_num = self.mem_len % party_num
-        remainder_num = party_num
+        
+        '''
+        remainder_num = self.mem_len % party_num
         if remainder_num != 0: 
             for r in range(remainder_num):
                 remainder.append(self.channel_mem.pop())
@@ -83,5 +84,15 @@ class MakeTeam:
         for i in range(party_num): 
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
+        '''
+        # チーム分け
+        remainder_num = party_num
+        for r in range(remainder_num):
+            remainder.append(self.channel_mem.pop())
+        team.append("=====チーム"+str(1)+"=====")
+        team.extend(remainder)
+        team.append("=====チーム"+str(2)+"=====")
+        team.extend(self.channel_mem)
+            
 
         return ('\n'.join(team))
